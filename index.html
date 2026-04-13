@@ -1,0 +1,228 @@
+הנה הקוד המעודכן. שילבתי בו את הפרטים הנוספים וגם מקום ייעודי לתמונה שלך.
+
+### הנחיות לגבי התמונה:
+כדי שהתמונה תופיע, את צריכה:
+1.  להעלות את קובץ התמונה שלך (למשל `yifat.jpg`) לאותו רפוזיטורי (Repository) בגיטהאב שבו נמצא קובץ ה-`index.html`.
+2.  לוודא שבקוד למטה, בשורה שמתחילה ב-`<img class="profile-img"`, השם של הקובץ (`src="yifat.jpg"`) תואם בדיוק לשם הקובץ שהעלית (כולל סיומת הקובץ, למשל .jpg או .png).
+
+---
+
+### הקוד המעודכן:
+
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיך הטעינה של יפעת רון - להתמודדות עם מחלות שקופות</title>
+    <style>
+        /* הגדרות כלליות לצבעים ופונטים */
+        :root {
+            --purple-dark: #4a148c; /* סגול כהה לכותרות */
+            --purple-main: #6a1b9a; /* סגול ראשי לכפתורים ודגשים */
+            --purple-light: #f3e5f5; /* סגול בהיר מאוד לרקע */
+            --purple-soft: #e1bee7; /* סגול רך לרקעים משניים */
+            --text-color: #333; /* צבע טקסט כהה */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--purple-light);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* קונטיינר מרכזי */
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--purple-dark);
+        }
+
+        /* עיצוב כותרות */
+        h1 {
+            color: var(--purple-dark);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--purple-main);
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--purple-soft);
+        }
+
+        h3 {
+            color: var(--purple-dark);
+            font-size: 1.3rem;
+            margin-top: 30px;
+        }
+
+        /* עיצוב טקסט */
+        p {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: var(--purple-main);
+        }
+
+        /* הדגשה לפרטים האישיים + תמונה */
+        .bio-section {
+            background-color: var(--purple-soft);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover; /* שומר על יחס התמונה */
+            border: 5px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .bio-text {
+            flex: 1; /* לוקח את שאר המקום */
+        }
+
+        .gender-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* עיצוב איזור הקריאה לפעולה */
+        .cta-section {
+            background-color: var(--purple-main);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h3, .cta-section p {
+            color: var(--white);
+            margin: 0 0 20px 0;
+        }
+
+        /* עיצוב הכפתור */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--white);
+            color: var(--purple-main);
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* אייקון וואטסאפ */
+        .whatsapp-btn img {
+            width: 25px;
+            height: 25px;
+            margin-left: 10px;
+        }
+
+        /* התאמה לנייד */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .bio-section {
+                flex-direction: column; /* תמונה מעל הטקסט */
+                text-align: center;
+                padding: 20px;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .whatsapp-btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>העולם רואה אותך מתפקדת, אבל בפנים הסוללה שלך על 5%.</h1>
+        <h2>חיים עם מחלה שקופה – כמו קרוהן, פיברומיאלגיה, אפילפסיה או כל התמודדות אחרת שלא רואים – הם מסע מאתגר.<br>
+            הגיע הזמן ללמוד איך להטעין את הבטריה שלך, גם כשהגוף מסמן "עצור".</h2>
+
+        <p>את מכירה את הימים האלה?</p>
+        <p>את נראית מצוין, את מתפקדת, עובדת, מנהלת בית – אבל בתוך תוכך, את מתמודדת עם עייפות כרונית, עם כאב שאין לו שם, או עם תחושה שאת צריכה להסביר את עצמך שוב ושוב כדי שמישהו יבין למה היום את פשוט לא יכולה.</p>
+
+        <div class="bio-section">
+            <img src="yifat.jpg" alt="יפעת רון" class="profile-img">
+            
+            <div class="bio-text">
+                <p><strong>אני יפעת רון, ואני מכירה את זה מקרוב.</strong></p>
+                <p>כמי שמתמודדת בעצמה עם מחלת קרוהן, וכמאמנת ומאסטר טריינר NLP, אני יודעת בדיוק מה עובר עלייך. אני יודעת מה זה לנהל חיים מלאים כשבתוך הגוף מתחוללת סערה שרק את מרגישה.</p>
+                <p>במשך שנים אני מלווה בקבוצות תמיכה בזום אנשים בדיוק כמונו. למדתי שדווקא במקומות שבהם המערכת הרפואית עוצרת, שם מתחיל הכוח האמיתי של הקהילה ושל הכלים המנטליים.</p>
+                <p><strong>את לא צריכה לשאת את זה לבד.</strong></p>
+                <p class="gender-note">(וכן – למרות שהפנייה כאן בלשון נקבה מתוך הזדהות עמוקה, הקהילה שלי פתוחה לכל מי שמתמודד וזקוק לבית חם – גברים ונשים כאחד).</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>הכנתי עבורך את: "מדריך הטעינה שלי"</h3>
+            <p>מדריך קצר ומעשי עם כלים קטנים שיעזרו לך לנהל את האנרגיה שלך ולחזור להרגיש קצת יותר את (או אתה).</p>
+            <p>זה פשוט. לחצי על הכפתור למטה, ושלחי את ההודעה. תקבלי ממני את המדריך וגם הזמנה להצטרף לקבוצת הוואטסאפ שלנו.</p>
+            <p>זו קהילה של אנשים שמבינים בלי מילים. מקום שבו המילה "עייפות" מקבלת חיבוק, לא סימן שאלה.</p>
+            
+            <a href="https://wa.me/972508884468?text=%D7%94%D7%99%D7%99%20%D7%99%D7%A4%D7%A2%D7%AA%2C%20%D7%90%D7%A9%D7%9E%D7%91%20%D7%A7%D7%91%D7%9C%20%D7%90%D7%AA%20%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%94%D7%98%D7%A2%D7%99%D7%A0%D7%94%20%D7%A9%D7%9C%D7%9A" class="whatsapp-btn" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                לחצי כאן לקבלת המדריך והזמנה לקבוצה
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
