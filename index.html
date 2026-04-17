@@ -120,3 +120,18 @@
 
 </body>
 </html>
+
+/* הגדרה למסכים קטנים (טלפונים) */
+@media (max-width: 768px) {
+  .bio-section {
+    display: flex;
+    flex-direction: column; /* מעביר את התוכן לעמודה אחת */
+    align-items: center;    /* ממקם הכל במרכז */
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-bottom: 15px;    /* מוסיף מרווח מתחת לתמונה */
+    max-width: 100%;        /* מוודא שהתמונה לא תהיה רחבה מהמסך */
+  }
+}
