@@ -21,7 +21,7 @@
             margin: 0;
             padding: 20px;
             line-height: 1.8;
-            text-align: right; /* יישור לימין לכל הדף */
+            text-align: right;
         }
 
         .container {
@@ -38,7 +38,6 @@
         h1 { color: var(--purple-dark); font-size: 2.2rem; margin-bottom: 20px; }
         h2 { color: var(--purple-main); font-size: 1.3rem; margin-bottom: 30px; }
 
-        /* סגנון לטקסט הראשי */
         .main-text {
             font-size: 1.2rem;
             color: #444;
@@ -55,7 +54,6 @@
             gap: 20px;
         }
 
-        /* כאן הגדרנו את התמונה */
         .profile-img {
             width: 140px;
             height: 140px;
@@ -70,7 +68,7 @@
             color: var(--white);
             padding: 30px;
             border-radius: 15px;
-            text-align: right; /* יישור לימין */
+            text-align: right;
             margin-top: 40px;
         }
 
@@ -88,6 +86,17 @@
             font-weight: bold;
             border-radius: 50px;
         }
+
+        /* כאן הוספתי את ההגדרה למסכים קטנים בתוך תגית ה-style */
+        @media (max-width: 768px) {
+            .bio-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img {
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -102,9 +111,7 @@
         <div class="bio-section">
             <img src="image_aef16d.jpg" alt="יפעת רון" class="profile-img">
             <div class="bio-text">
-
-                <p><strong>נעים להכיר, שמי יפעת רון. אני מאמנת ומנחת מעגלי תמיכה למתמודדים עם מחלות שקופות, עם השנים הבנתי שמה שלי נראה ברור מאליו בהתמודדות האישית שלי 
-                    לא תמיד ברור לאחרים והחלטתי להנגיש את המידע הזה ללא עלות לכל מי שצריך וצריכה. בדיוק בשביל זה יצרתי את המדריך הזה. מקווה שהוא יהיה לך לעזר בדרך שלך.</p>
+                <p><strong>נעים להכיר, שמי יפעת רון.</strong> אני מאמנת ומנחת מעגלי תמיכה למתמודדים עם מחלות שקופות, עם השנים הבנתי שמה שלי נראה ברור מאליו בהתמודדות האישית שלי לא תמיד ברור לאחרים והחלטתי להנגיש את המידע הזה ללא עלות לכל מי שצריך וצריכה. בדיוק בשביל זה יצרתי את המדריך הזה. מקווה שהוא יהיה לך לעזר בדרך שלך.</p>
             </div>
         </div>
 
@@ -113,25 +120,10 @@
             <p>מדריך קצר ומעשי עם כלים קטנים שיעזרו לך לנהל את האנרגיה שלך. לחצי על הכפתור למטה, ותקבלי ממני את המדריך בהודעה חוזרת.</p>
             
             <a href="https://wa.me/972508884468?text=היי%20יפעת,%20אשמח%20לקבל%20את%20מדריך%20הטעינה%20שלך" class="whatsapp-btn" target="_blank">
-לחצי כאן לקבלת המדריך
+                לחצי כאן לקבלת המדריך
             </a>
         </div>
     </div>
 
 </body>
 </html>
-
-/* הגדרה למסכים קטנים (טלפונים) */
-@media (max-width: 768px) {
-  .bio-section {
-    display: flex;
-    flex-direction: column; /* מעביר את התוכן לעמודה אחת */
-    align-items: center;    /* ממקם הכל במרכז */
-    text-align: center;
-  }
-
-  .profile-img {
-    margin-bottom: 15px;    /* מוסיף מרווח מתחת לתמונה */
-    max-width: 100%;        /* מוודא שהתמונה לא תהיה רחבה מהמסך */
-  }
-}
